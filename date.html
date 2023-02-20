@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <section class="w-full bg-slate-800 px-10 py-40 h-screen justify-center items-start">
+        <div class="flex items-center w-full justify-center">
+
+            <div class=" w-full">
+                <div class="p-5 dark:bg-white/0 bg-white rounded">
+                    <div class="px-2 flex items-center justify-between">
+                        <span class="focus:outline-none text-base font-bold dark:text-gray-100 text-gray-800"><span
+                                id="monthName"></span>
+                            <span id="yearName"></span></span>
+                        <div class="flex items-center">
+                            <button id="prev" aria-label="calendar backward"
+                                class="focus:text-gray-400 hover:text-gray-400 text-gray-800 dark:text-gray-100">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <polyline points="15 6 9 12 15 18" />
+                                </svg>
+                            </button>
+                            <button id="next" aria-label="calendar forward"
+                                class="focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-800 dark:text-gray-100">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler  icon-tabler-chevron-right" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <polyline points="9 6 15 12 9 18" />
+                                </svg>
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-2 overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="w-full flex justify-center">
+                                            <p class="text-xs font-medium text-center text-gray-400">
+                                                Min
+                                            </p>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="w-full flex justify-center">
+                                            <p class="text-xs font-medium text-center text-gray-400">
+                                                Sen
+                                            </p>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="w-full flex justify-center">
+                                            <p class="text-xs font-medium text-center text-gray-400">
+                                                Sel
+                                            </p>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="w-full flex justify-center">
+                                            <p class="text-xs font-medium text-center text-gray-400">
+                                                Rab
+                                            </p>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="w-full flex justify-center">
+                                            <p class="text-xs font-medium text-center text-gray-400">
+                                                Kam
+                                            </p>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="w-full flex justify-center">
+                                            <p class="text-xs font-medium text-center text-gray-400">
+                                                Jum
+                                            </p>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="w-full flex justify-center">
+                                            <p class="text-xs font-medium text-center text-gray-400">
+                                                Sab
+                                            </p>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="pt-3">
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList" class="text-xs text-red-500 dark:text-red-500 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td class="pt-3">
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td class="pt-3">
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td class="pt-3">
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td class="pt-3">
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td class="pt-3">
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td class="pt-3">
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList" class="text-xs text-red-500 dark:text-red-500 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div
+                                            class="flex items-center justify-center w-full rounded-full cursor-pointer">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList" class="text-xs text-red-500 dark:text-red-500 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList" class="text-xs text-red-500 dark:text-red-500 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList" class="text-xs text-red-500 dark:text-red-500 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList" class="text-xs text-red-500 dark:text-red-500 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="px-1 py-1 cursor-pointer flex w-full justify-center">
+                                            <p id="dayList"
+                                                class="text-xs text-gray-500 dark:text-gray-100 font-medium">
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+    </section>
+
+
+
+    <script>
+        const prevButton = document.querySelector('#prev')
+        const nextButton = document.querySelector('#next')
+        const monthName = document.querySelector('#monthName')
+        const yearName = document.querySelector('#yearName')
+        const dayList = document.querySelectorAll('#dayList')
+
+        let today = new Date();
+        let month = today.getMonth();
+        let year = today.getFullYear();
+        const date = today.getDate();
+        const day = today.getDay()
+
+        const hari = [
+            'senin',
+            'selasa',
+            'rabu',
+            'kamis',
+            'jumat',
+            'sabtu',
+            'minggu'
+        ]
+
+        const months = [
+            "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+            "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        ];
+
+        monthName.textContent = months[month];
+        yearName.textContent = year;
+
+        nextButton.addEventListener('click', () => {
+            next()
+        })
+
+        prevButton.addEventListener('click', () => {
+            prev()
+        })
+
+        function arrayOfdate(year, month) {
+            const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const daysInMonth = new Date(year, month, 0).getDate();
+            const firstWeekday = new Date(year, month - 1, 1).getDay();
+
+            const calendarArray = new Array(37).fill('').map((day, index) => {
+                const dayOfMonth = index - firstWeekday + 1;
+                if (dayOfMonth < 1 || dayOfMonth > daysInMonth) {
+                    return '';
+                } else {
+                    return `${dayOfMonth}`;
+                }
+            });
+
+            return calendarArray;
+        }
+
+        let datesArray = arrayOfdate(year, month + 1)
+        for (let a = 0; a < datesArray.length; a++) {
+            for (i = 0; i < dayList.length; i++) {
+                dayList[i].textContent = datesArray[i]
+                if (dayList[i].textContent == date) {
+                    dayList[i].innerHTML = `<span title="hari ini" class="w-6 h-6 border grid place-items-center rounded-full">${date}</span>`
+                }
+            }
+        }
+
+        function next() {
+            if (month >= 11) {
+                monthName.textContent = months[month = 0]
+                yearName.textContent = year++ + 1
+                let datesArray = arrayOfdate(year, month + 1)
+                for (let a = 0; a < datesArray.length; a++) {
+                    for (i = 0; i < dayList.length; i++) {
+                        dayList[i].textContent = datesArray[i]
+                        if (month == today.getMonth() && year == today.getFullYear()) {
+                            if (dayList[i].textContent == date) {
+                                dayList[i].innerHTML = `<span class="w-6 h-6 border grid place-items-center rounded-full">${date}</span>`
+                            }
+                        }
+                    }
+                }
+            } else {
+                monthName.textContent = months[month++ + 1]
+                let datesArray = arrayOfdate(year, month + 1)
+                for (let a = 0; a < datesArray.length; a++) {
+                    for (i = 0; i < dayList.length; i++) {
+                        dayList[i].textContent = datesArray[i]
+                        if (month == today.getMonth() && year == today.getFullYear()) {
+                            if (dayList[i].textContent == date) {
+                                dayList[i].innerHTML = `<span class="w-6 h-6 border grid place-items-center rounded-full">${date}</span>`
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        function prev() {
+            if (month <= 0) {
+                monthName.textContent = months[month = 11]
+                yearName.textContent = year-- - 1
+                let datesArray = arrayOfdate(year, month + 1)
+                for (let a = 0; a < datesArray.length; a++) {
+                    for (i = 0; i < dayList.length; i++) {
+                        dayList[i].textContent = datesArray[i]
+                        if (month == today.getMonth() && year == today.getFullYear()) {
+                            if (dayList[i].textContent == date) {
+                                dayList[i].innerHTML = `<span class="w-6 h-6 border grid place-items-center rounded-full">${date}</span>`
+                            }
+                        }
+                    }
+                }
+            } else {
+                monthName.textContent = months[month-- - 1]
+                let datesArray = arrayOfdate(year, month + 1)
+                for (let a = 0; a < datesArray.length; a++) {
+                    for (i = 0; i < dayList.length; i++) {
+                        dayList[i].textContent = datesArray[i]
+                        if (month == today.getMonth() && year == today.getFullYear()) {
+                            if (dayList[i].textContent == date) {
+                                dayList[i].innerHTML = `<span class="w-6 h-6 border grid place-items-center rounded-full">${date}</span>`
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
